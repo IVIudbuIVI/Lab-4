@@ -1,0 +1,42 @@
+/*
+Lab 4 - Epirement 1
+Mudassir Iqbal Mohammed 
+DIGF 2B03 Physical Computing S01
+OCAD University
+Created on [Jan 31 2015]
+Based on:
+Arduino : tone() exapmle 
+*/
+
+//#include "pitches.h" 
+
+int IFPin = A0; //define a pin for infrared sensor 
+
+void setup() {
+  Serial.begin(9600); //Begin serial communication 
+  
+  
+}
+
+void loop () {
+  
+  
+  int DistanceVal = analogRead(A0); //takes information from IR sensor
+   if ( DistanceVal>500){
+     tone(11, 33); 
+   }
+   else if (DistanceVal<=500 && DistanceVal>350) {
+     tone(11, 131);
+   }
+   else if (DistanceVal<=350 && DistanceVal>150) {
+     tone(11, 262);
+   }
+   else{
+     tone(11, 1047); 
+   }
+   
+   
+  Serial.println(DistanceVal); 
+ 
+  
+}
