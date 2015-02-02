@@ -5,7 +5,8 @@ DIGF 2B03 Physical Computing S01
 OCAD University
 Created on [Jan 30 2015]
 
-*/#include <Servo.h> 
+*/
+#include <Servo.h> 
 
 Servo myservo;
 int trigger_pin = 8; 
