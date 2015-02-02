@@ -1,0 +1,28 @@
+/*
+Lab 4 - Epirement 3
+Mudassir Iqbal Mohammed 
+DIGF 2B03 Physical Computing S01
+OCAD University
+Created on [Jan 30 2015]
+
+*/
+
+const int transistorPin = 9;    // connected to the base of the transistor
+ 
+ void setup() {
+   
+   pinMode(transistorPin, OUTPUT);// transistor
+   Serial.begin(9600);
+
+ }
+ 
+ void loop() {
+ 
+   int sensorValue = analogRead(A0);// transistor taking values from A0
+   // mapping the pot values to a range from 0 - 255:
+   int outputValue = map(sensorValue, 0, 1023, 0, 255);
+
+   analogWrite(transistorPin, outputValue);
+   
+   Serial.println(outputValue);
+ }
