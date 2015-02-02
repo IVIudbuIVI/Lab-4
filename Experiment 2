@@ -1,0 +1,33 @@
+/*
+Lab 4 - Epirement 2
+Mudassir Iqbal Mohammed 
+DIGF 2B03 Physical Computing S01
+OCAD University
+Created on [Jan 30 2015]
+
+*/#include <Servo.h> 
+
+Servo myservo;
+int trigger_pin = 8; 
+
+void setup() {
+  
+ myservo.attach(9);  // attaches the servo on pin 9 to the servo object 
+ pinMode(trigger_pin, INPUT); //making the button the trigger input
+ 
+}
+ void loop () {
+   int trigger_state = digitalRead(trigger_pin); 
+   
+    if (trigger_state ==HIGH) {
+    myservo.write(180);
+    delay(1000); 
+    
+  }
+    else {
+      myservo.write(90); 
+    }
+  
+ 
+  
+ }
